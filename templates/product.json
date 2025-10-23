@@ -241,35 +241,30 @@
           "type": "label",
           "disabled": true,
           "settings": {
-            "icon": "shopify://shop_images/fast-delivery-truck-van-svgrepo-com.svg",
             "label": "FREE SHIPPING ON ORDERS ABOVE $50"
           }
         },
         "label_HET6Xn": {
           "type": "label",
           "settings": {
-            "icon": "shopify://shop_images/save-pound-svgrepo-com.svg",
             "label": "SAVE UPTO 50% OFF WITH OUR BUNDLES & GIFT SETS"
           }
         },
         "label_h4yRgb": {
           "type": "label",
           "settings": {
-            "icon": "shopify://shop_images/verified-svgrepo-com.svg",
             "label": "100% AUTHENTIC"
           }
         },
         "label_REjpje": {
           "type": "label",
           "settings": {
-            "icon": "shopify://shop_images/achievement-svgrepo-com.svg",
             "label": "EXPERT-CURATED COLLECTIONS"
           }
         },
         "label_BAYHU7": {
           "type": "label",
           "settings": {
-            "icon": "shopify://shop_images/money-back-business-warranty-satisfaction-marketing-guaranted-svgrepo-com.svg",
             "label": "RISK-FREE 60 DAYS MONEY BACK GUARANTEE"
           }
         }
@@ -469,7 +464,6 @@
       "name": "TryScent Statistics",
       "settings": {
         "background_color": "#faf9f6",
-        "statistic_image": "shopify://shop_images/Frame_180.png",
         "heading": "10,000+ TryScent Bottles Shipped Worldwide",
         "disclaimer": "*RESULTS BASED ON 1,000+ POST-PURCHASE SURVEYS",
         "padding_top": 12,
@@ -516,7 +510,7 @@
       ],
       "name": "TryScent Steps Timeline",
       "settings": {
-        "satisfaction_bg_image": "shopify://shop_images/Frame_367.png",
+        "satisfaction_bg_image": "shopify://shop_images/Frame_367_b2d461c4-cf36-4fcd-8e4e-fa9f7e1cb967.webp",
         "satisfaction_title": "Your Satisfaction Guarantee"
       }
     },
