@@ -147,7 +147,7 @@
                 {% if section.settings.quick_add == 'bulk' %} collection-quick-add-bulk{% endif %}
               ">
               {% unless collection.handle contains 'bundle-save' %}
-                {% render 'card-product-bogo' %}
+                {% comment %} {% render 'card-product-bogo' %} {% endcomment %}
               {% endunless %}
               {% assign skip_card_product_styles = false %}
               {%- for product in collection.products -%}
