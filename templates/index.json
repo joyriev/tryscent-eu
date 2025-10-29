@@ -310,10 +310,10 @@
           "settings": {
             "image": "shopify://shop_images/explore.png",
             "heading": "Scents For Women",
-            "subheading": "100+ scents to choose from",
+            "subheading": "Scents for Women",
             "button_text": "Explore",
             "button_link": "shopify://collections",
-            "collection": "perfume-gifts"
+            "collection": "women"
           }
         },
         "collection_zqtLKY": {
