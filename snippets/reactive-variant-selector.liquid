@@ -12,7 +12,7 @@
   </div>
 </div>
 
-<div class="grid grid-cols-4 gap-3" id="variant-selector">
+<div class="grid grid-cols-3 gap-3" id="variant-selector">
   {% for variant in product.variants %}
     {% assign size = variant.title | remove: 'ML' %}
     {% assign size_int = size | times: 1 %}
