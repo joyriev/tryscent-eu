@@ -276,11 +276,13 @@
         "label_REjpje",
         "label_BAYHU7"
       ],
+      "disabled": true,
       "name": "Marquee Labels",
       "settings": {}
     },
     "cupid_video_reviews_RyEMKn": {
       "type": "cupid-video-reviews",
+      "disabled": true,
       "name": "Cupid Video Reviews",
       "settings": {
         "padding_top": 72,
