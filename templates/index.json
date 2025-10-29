@@ -310,7 +310,7 @@
           "settings": {
             "image": "shopify://shop_images/explore.png",
             "heading": "Scents For Women",
-            "subheading": "Scents for Women",
+            "subheading": "Best Scents for Women",
             "button_text": "Explore",
             "button_link": "shopify://collections",
             "collection": "women"
@@ -321,7 +321,7 @@
           "settings": {
             "image": "shopify://shop_images/scent-for-men-explore-img.png",
             "heading": "Scents For Men",
-            "subheading": "100+ scents to choose from",
+            "subheading": "Best Scent's for Men",
             "button_text": "Explore",
             "button_link": "shopify://collections/men",
             "collection": "men"
