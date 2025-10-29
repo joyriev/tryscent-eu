@@ -126,6 +126,7 @@
         "label_8KQqAa",
         "label_LMktzF"
       ],
+      "disabled": true,
       "name": "Marquee Labels",
       "settings": {}
     },
@@ -556,6 +557,7 @@
         "label_pNxYCF",
         "label_jRHLQB"
       ],
+      "disabled": true,
       "name": "Marquee Labels",
       "settings": {}
     },
