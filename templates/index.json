@@ -203,7 +203,7 @@
         "background_color": "#faf9f6",
         "heading": "Selected for you",
         "button_text": "Explore All",
-        "button_link": "shopify://collections/all",
+        "button_link": "shopify://collections/best-sellers",
         "explore_image": "shopify://shop_images/explore-all-image.png",
         "explore_heading": "All Scents, Well Selected",
         "explore_subheading": "The best scents to choose from",
@@ -431,6 +431,7 @@
         "perk_d4dqHJ",
         "perk_9CajQF"
       ],
+      "disabled": true,
       "name": "Special Offer",
       "settings": {
         "background_image": "shopify://shop_images/special-offer-two-bg.webp",
