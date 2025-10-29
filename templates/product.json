@@ -59,7 +59,6 @@
         },
         "reactive_variant_selector_JyFrkg": {
           "type": "reactive_variant_selector",
-          "disabled": true,
           "settings": {}
         },
         "shipping_text_HCVN8A": {
@@ -69,6 +68,7 @@
         },
         "custom_liquid_G7fm64": {
           "type": "custom_liquid",
+          "disabled": true,
           "settings": {
             "custom_liquid": "{% render 'atc-bundle-builder' %}"
           }
