@@ -360,6 +360,7 @@
         "product_xX66RW",
         "product_rbFra6"
       ],
+      "disabled": true,
       "name": "Stacks Up",
       "settings": {
         "background_color": "#faf9f6",
@@ -400,6 +401,7 @@
         "perk_dBbEYA",
         "perk_8Q6daz"
       ],
+      "disabled": true,
       "name": "Special Offer",
       "settings": {
         "background_image": "shopify://shop_images/Frame_349.png",
@@ -510,6 +512,7 @@
         "step_pQ6dMt",
         "step_7wCD4n"
       ],
+      "disabled": true,
       "name": "TryScent Steps Timeline",
       "settings": {
         "satisfaction_bg_image": "shopify://shop_images/Frame_367_b2d461c4-cf36-4fcd-8e4e-fa9f7e1cb967.webp",
@@ -524,6 +527,7 @@
     },
     "cupid-images-slider": {
       "type": "cupid-images-slider",
+      "disabled": true,
       "settings": {
         "padding_top": 72,
         "padding_bottom": 72,
