@@ -144,12 +144,15 @@
     },
     "content_for_index": [],
     "blocks": {
-      "5460929749692845798": {
-        "type": "shopify://apps/shopacado-discounts/blocks/enable/5950831a-4e4e-40a4-82b0-674110b50a14",
+      "13027630495364635475": {
+        "type": "shopify://apps/discount-ninja/blocks/la-dn-app-embed-core-v5-assetless/b9a933ba-e276-459f-a4bf-3571d5a1e81c",
         "disabled": false,
-        "settings": {
-          "theme_id": "182278324509"
-        }
+        "settings": {}
+      },
+      "10727672529976264282": {
+        "type": "shopify://apps/discount-ninja/blocks/la-dn-app-embed-core-v5-assetless-1124/b9a933ba-e276-459f-a4bf-3571d5a1e81c",
+        "disabled": false,
+        "settings": {}
       }
     },
     "color_schemes": {
