@@ -545,7 +545,7 @@
               {{ 'sections.cart.checkout' | t }}
             </button>
           </div>
-          <div class="flex gap-1 space-between mt-6">
+          <div class="flex gap-1 space-between mt-6 justify-center">
             {% assign enabled_payment_types = 'visa,master,american_express,paypal,ideal,klarna,google_pay,apple_pay,shopify_pay' | remove: ' ' | split: ','
             %}
             {% for type in enabled_payment_types %}
