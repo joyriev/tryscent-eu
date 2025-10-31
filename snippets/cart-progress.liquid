@@ -1,24 +1,34 @@
 {% assign item_count = cart.item_count %}
-
+{% assign total_price = cart.total_price %}
 
 {% if item_count > 0 %}
   <div class="bg-gray-100 px-8 pt-3 pb-2 rounded-full [display:grid] gap-6 grid-cols-10 mb-6">
     <div class="col-span-4">
       <div class="[display:grid] grid-cols-2 gap-1 mb-2">
         <div class="h-2 w-full rounded-full !block bg-[#137c44]"></div>
-        <div class="h-2 w-full rounded-full !block bg-gray-300"></div>
+        {% if item_count >= 2 %}
+          <div class="h-2 w-full rounded-full !block bg-[#137c44]"></div>
+        {% else %}
+          <div class="h-2 w-full rounded-full !block bg-gray-300"></div>
+        {% endif %}
       </div>
       <p class="my-0 text-xs text-center">
         2 items 50% OFF</p>
     </div>
     <div class="col-span-3">
-      <div class="h-2 w-full rounded-full !block bg-[#137c44] mb-2"></div>
+      <div class="h-2 w-full rounded-full !block bg-[#137c44] mb-2">
+        {% if item_count >= 3 %}
+          <div class="h-2 w-full rounded-full !block bg-[#137c44]"></div>
+        {% else %}
+          <div class="h-2 w-full rounded-full !block bg-gray-300"></div>
+        {% endif %}
+      </div>
       <p class="my-0 text-xs text-center">
         3 items 66% OFF
       </p>
     </div>
     <div class="col-span-3">
-      <div class="h-2 w-full rounded-full !block bg-[#137c44] mb-2 relative">
+      <div class="h-2 w-full rounded-full !block mb-2 relative {% if total_price >= 5000 %}bg-[#137c44] {% else %}bg-gray-300{% endif %}">
         <img
           class="absolute -top-1.5 left-[40%] transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-xl"
           src="{{ 'free-shipping.svg' | asset_url }}"
@@ -27,7 +37,7 @@
           height="20">
       </div>
       <p class="my-0 text-xs text-center">
-        Free Shipping
+        $50+ Free Shipping
       </p>
     </div>
   </div>
