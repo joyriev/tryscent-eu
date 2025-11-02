@@ -477,7 +477,7 @@
             <div>
               {%- if cart.cart_level_discount_applications.size > 0 -%}
                 <ul
-                  class="discounts list-unstyled"
+                  class="limoniapps-discountninja-whenactivepromotions-hide discounts list-unstyled"
                   role="list"
                   aria-label="{{ 'customer.order.discount' | t }}">
                   {%- for discount in cart.cart_level_discount_applications -%}
@@ -490,10 +490,12 @@
                 </ul>
               {%- endif -%}
             </div>
-
-            <div class="totals" role="status">
+{% comment %}Added/Modified by Limoni Apps on 02/11/25 to support Discount Ninja{% endcomment %}
+<div data-la-dn-promotion-summary-placeholder></div>
+<div data-la-dn-promocodefield-placeholder></div>
+            <div class="totals limoniapps-discountninja-cart-subtotal" role="status">
               <h2 class="totals__total">{{ 'sections.cart.estimated_total' | t }}</h2>
-              <p class="totals__total-value">{{ cart.total_price | money_with_currency }}</p>
+              <p class="totals__total-value limoniapps-discountninja-cart-subtotal-price">{{ cart.total_price | money_with_currency }}</p>
             </div>
 
             <small class="tax-note caption-large rte">
