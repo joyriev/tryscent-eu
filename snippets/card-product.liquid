@@ -234,7 +234,7 @@ data-la-dn-product-tags="{{ card_product.tags | join: ',' | escape | default: '[
               <div>"...{{ card_product.metafields.custom.nuta }}..."</div>
              {% endif %}
 
-              <div class="font-bold tracking-normal text-lg">
+              <div data-la-dn-price class="font-bold tracking-normal text-lg">
                 {% unless card_product.tags contains 'onsale' %}
                   <span class="starts_at_text">Starts at</span>
                 {% endunless %}
