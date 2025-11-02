@@ -2,6 +2,33 @@
 <html class="js" lang="{{ request.locale.iso_code }}">
   <head>
     <script>
+document.addEventListener("DOMContentLoaded", function () {
+  var announcementBar = document.querySelector("sticky-header");
+  var targetOffset = announcementBar ? announcementBar.offsetTop : 0;
+
+  function toggleBodyClass() {
+    var scrollPosition = window.scrollY || document.documentElement.scrollTop;
+    if (scrollPosition > targetOffset) {
+      document.body.classList.add("scrolled");
+    } else {
+      document.body.classList.remove("scrolled");
+    }
+  }
+
+  toggleBodyClass();
+
+  window.addEventListener("scroll", function () {
+    var stickyBar = document.querySelector("#limoniapps-discountninja-stickybar-wrapper");
+    if (stickyBar) {
+      var elementHeight = stickyBar.offsetHeight;
+      document.documentElement.style.setProperty("--limo-height", elementHeight + "px");
+    }
+    toggleBodyClass();
+  });
+});
+
+</script>
+    <script>
       /* >> Heatmap.com :: Snippet << */(function (h,e,a,t,m,ap) { (h._heatmap_paq = []).push([ 'setTrackerUrl', (h.heatUrl = e) + a]); h.hErrorLogs=h.hErrorLogs || []; ap=t.createElement('script');  ap.src=h.heatUrl+'preprocessor.min.js?sid='+m;  ap.defer=true; t.head.appendChild(ap); ['error', 'unhandledrejection'].forEach(function (ty) {     h.addEventListener(ty, function (et) { h.hErrorLogs.push({ type: ty, event: et }); }); });})(window,'https://dashboard.heatmap.com/','heatmap.php',document,3912);
     </script>
     {% render 'pandectes-rules' %}
