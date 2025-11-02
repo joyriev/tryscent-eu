@@ -154,7 +154,7 @@ data-la-dn-product-tags="{{ product.tags | join: ',' | escape | default: '[[--NO
                   >
                     {%- if product.featured_media != blank -%}
                       <img
-                        class="predictive-search__image"
+                        class="la-dn-collection-badge predictive-search__image"
                         src="{{ product.featured_media | image_url: width: 150 }}"
                         alt="{{ product.featured_media.alt | escape }}"
                         width="50"
@@ -170,7 +170,7 @@ data-la-dn-product-tags="{{ product.tags | join: ',' | escape | default: '[[--NO
                       {%- endif -%}
                       <p class="predictive-search__item-heading h5">{{ product.title | escape }}</p>
                       {%- if settings.predictive_search_show_price -%}
-                        {% render 'price', product: product, use_variant: true, show_badges: false %}
+                       <span data-la-dn-price> {% render 'price', product: product, use_variant: true, show_badges: false %}</span>
                       {%- endif -%}
                     </div>
                   </a>
