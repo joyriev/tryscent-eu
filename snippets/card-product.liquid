@@ -557,7 +557,7 @@ data-la-dn-product-tags="{{ card_product.tags | join: ',' | escape | default: '[
                         <a href="{{ card_product.url }}" class="full-unstyled-link">
                           <h3>{{ card_product.title | escape }}</h3>
                         </a>
-                        {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
+                       <span data-la-dn-price> {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}</span>
                         {%- if card_product.quantity_price_breaks_configured? -%}
                           <div class="card__information-volume-pricing-note">
                             <span class="caption">{{ 'products.product.volume_pricing.note' | t }}</span>
@@ -572,7 +572,7 @@ data-la-dn-product-tags="{{ card_product.tags | join: ',' | escape | default: '[
                             {{ card_product.title | escape }}
                           </h3>
                         </a>
-                        {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}
+                        <span data-la-dn-price>  {% render 'price', product: card_product, price_class: '', show_compare_at_price: true %}</span>
                         {%- if card_product.quantity_price_breaks_configured? -%}
                           <div class="card__information-volume-pricing-note">
                             <span class="caption">{{ 'products.product.volume_pricing.note' | t }}</span>
