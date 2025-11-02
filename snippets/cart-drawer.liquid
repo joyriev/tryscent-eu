@@ -104,6 +104,7 @@
                     <tbody role="rowgroup">
                       {%- for item in cart.items -%}
                         <tr
+                          data-la-dn-cart-item-row data-la-dn-cart-item-key="{{ item.key }}"
                           id="CartDrawer-Item-{{ item.index | plus: 1 }}"
                           class="cart-item"
                           role="row">
