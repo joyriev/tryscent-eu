@@ -16,6 +16,7 @@
           "type": "story",
           "settings": {
             "title": "LV",
+            "image": "shopify://shop_images/new-arribals.png",
             "link": "shopify://collections/louis-vuitton®"
           }
         },
@@ -23,6 +24,7 @@
           "type": "story",
           "settings": {
             "title": "Dior",
+            "image": "shopify://shop_images/dior.png",
             "link": "shopify://collections/dior®"
           }
         },
@@ -30,6 +32,7 @@
           "type": "story",
           "settings": {
             "title": "Tom Ford",
+            "image": "shopify://shop_images/Tom_ford.png",
             "link": "shopify://collections/tomford®"
           }
         },
@@ -37,6 +40,7 @@
           "type": "story",
           "settings": {
             "title": "Baccarat",
+            "image": "shopify://shop_images/Baccarat_Rouge.png",
             "link": "shopify://collections/baccarat-rouge®"
           }
         },
@@ -44,6 +48,7 @@
           "type": "story",
           "settings": {
             "title": "Creed",
+            "image": "shopify://shop_images/Creed.png",
             "link": "shopify://collections/creed®"
           }
         },
