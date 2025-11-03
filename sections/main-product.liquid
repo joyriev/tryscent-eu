@@ -153,10 +153,10 @@
                   </p>
                 </div>
               {%- when 'selling_points' -%}
-                <ul class="list-none p-0">
+                <ul class="list-none px-0 py-6 border-0 border-y border-gray-200 border-solid">
                   {% for item in product.metafields.custom.selling_points.value %}
                     <li class="flex gap-2 items-center text-gray-950 mb-4 leading-[1.2]">
-                      <img src="{{ 'tryscent-bottle.svg' | asset_url }}" alt="" height="24" width="24">
+                      ✅
                       {{ item }}
                     </li>
                   {% endfor %}
