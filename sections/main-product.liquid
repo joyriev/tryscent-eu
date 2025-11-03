@@ -95,10 +95,10 @@
                 </div>
               {% when 'inspiration' %}
                 <div class="flex items-center gap-2 mb-3">
-                  <img class="object-contain object-center" src="{{ product.metafields.custom.inspiration.value.image |  image_url }}" alt="{{ product.metafields.custom.inspiration.value.image.alt | escape }}" width="35" height="35">
+                  <img class="object-contain object-center bg-white" src="{{ product.metafields.custom.inspiration.value.image |  image_url }}" alt="{{ product.metafields.custom.inspiration.value.image.alt | escape }}" width="45" height="45">
                   <div>
-                    <h4 class="text-sm font-semibold my-0 line-clamp-1">{{ product.metafields.custom.inspiration.value.name }}</h4>
-                    <p class="text-xs my-0">Inspiration</p>
+                    <h4 class="font-semibold my-0 line-clamp-1">{{ product.metafields.custom.inspiration.value.name }}</h4>
+                    <p class="text-sm my-0">Inspiration</p>
                   </div>
                 </div>
               {% when 'cheaper_than' %}
