@@ -26,6 +26,23 @@ TODO: Show bestseller tag if the product contains "bestseller" tag.
   Usage:
   {% render 'card-product', show_vendor: section.settings.show_vendor %}
 {% endcomment %}
+
+{% liquid
+  assign badge_text = ''
+  if card_product.tags contains 'bestseller'
+    assign badge_text = 'Best Seller'
+  endif
+  if card_product.tags contains 'onsale'
+    assign badge_text = 'On Sale'
+  endif
+  if card_product.tags contains 'viral'
+    assign badge_text = 'Online Viral'
+  endif
+  if card_product.tags contains 'popular'
+    assign badge_text = 'Most Popular'
+  endif
+%}
+
 {%- unless skip_styles -%}
   {{ 'component-rating.css' | asset_url | stylesheet_tag }}
   {{ 'component-volume-pricing.css' | asset_url | stylesheet_tag }}
@@ -76,9 +93,16 @@ data-la-dn-product-tags="{{ card_product.tags | join: ',' | escape | default: '[
         class="card__inner {% if settings.card_style == 'standard' %}color-{{ settings.card_color_scheme }} gradient{% endif %}{% if card_product.featured_media or settings.card_style == 'standard' %} ratio{% endif %}"
         style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;"
       >
+        {% if badge_text != '' %}
+          <div class="absolute top-0 right-0 z-50">
+            <div class="text-white bg-green-600 text-xs font-semibold px-2 py-1 rounded inline-block">
+              {{ badge_text }}
+            </div>
+          </div>
+        {% endif %}
         {%- if card_product.featured_media -%}
           <div class="card__media{% if image_shape and image_shape != 'default' %} shape--{{ image_shape }} color-{{ settings.card_color_scheme }} gradient{% endif %}">
-            <div class="media media--transparent media--hover-effect">
+          <div class="media media--transparent media--hover-effect">
               {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
               <img
                 srcset="
@@ -147,33 +171,14 @@ data-la-dn-product-tags="{{ card_product.tags | join: ',' | escape | default: '[
       </div>
       <div class="card__content">
         <div class="card__information">
-          {% liquid
-            assign badge_text = ''
-            if card_product.tags contains 'bestseller'
-              assign badge_text = 'Best Seller'
-            endif
-            if card_product.tags contains 'onsale'
-              assign badge_text = 'On Sale'
-            endif
-            if card_product.tags contains 'viral'
-              assign badge_text = 'Online Viral'
-            endif
-            if card_product.tags contains 'popular'
-              assign badge_text = 'Most Popular'
-            endif
-          %}
-
+          <div class="flex items-center gap-2 mb-3">
+            <img class="object-contain object-center" src="{{ card_product.metafields.custom.inspiration.value.image |  image_url }}" alt="{{ card_product.metafields.custom.inspiration.value.image.alt | escape }}" width="35" height="35">
+            <div>
+              <h4 class="text-sm font-semibold my-0 line-clamp-1">{{ card_product.metafields.custom.inspiration.value.name }}</h4>
+              <p class="text-xs my-0">Inspiration</p>
+            </div>
+          </div>
           <div class="flex items-center flex-wrap gap-x-2 gap-y-1">
-            {% if badge_text != '' %}
-              <div>
-                <div class="text-green-600 text-xs font-semibold bg-green-600/10 px-2 py-1 rounded inline-block">
-                {{ badge_text }}
-              </div>
-              </div>
-            {% endif %}
-
-            {% comment %} <span class="text-gray-300 [display:none] md:inline-block">|</span> {% endcomment %}
-
             {%- if show_rating and card_product.metafields.reviews.rating.value != blank -%}
               {% liquid
                 assign rating_decimal = 0
@@ -230,10 +235,6 @@ data-la-dn-product-tags="{{ card_product.tags | join: ',' | escape | default: '[
               <div class="caption-with-letter-spacing light">{{ card_product.vendor }}</div>
             {%- endif -%}
             <span class="caption-large light">{{ block.settings.description | escape }}</span>
-             {% if card_product.metafields.custom.nuta != blank %}
-              <div>"...{{ card_product.metafields.custom.nuta }}..."</div>
-             {% endif %}
-
               <div data-la-dn-price class="font-bold tracking-normal text-lg">
                 {% unless card_product.tags contains 'onsale' %}
                   <span class="starts_at_text">Starts at</span>
