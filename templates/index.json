@@ -82,6 +82,7 @@
     },
     "homepage_hero_GDeBtq": {
       "type": "homepage-hero",
+      "disabled": true,
       "name": "Homepage Hero",
       "settings": {
         "background_color": "#121212",
