@@ -93,6 +93,14 @@
                 <div class="line-clamp-1 relative !-my-2">
                   <span class="italic tracking-tighter">Inspired by</span> <a href="/search?q={{ product.metafields.custom.forgaylawyers | url_encode }}" class="font-semibold text-lg not-italic tracking-tight text-gray-900 ![text-decoration:none]">{{ product.metafields.custom.forgaylawyers }}</a>
                 </div>
+              {% when 'inspiration' %}
+                <div class="flex items-center gap-2 mb-3">
+                  <img class="object-contain object-center" src="{{ product.metafields.custom.inspiration.value.image |  image_url }}" alt="{{ product.metafields.custom.inspiration.value.image.alt | escape }}" width="35" height="35">
+                  <div>
+                    <h4 class="text-sm font-semibold my-0 line-clamp-1">{{ product.metafields.custom.inspiration.value.name }}</h4>
+                    <p class="text-xs my-0">Inspiration</p>
+                  </div>
+                </div>
               {% when 'cheaper_than' %}
                 {% if product.metafields.custom.nuta  != blank %}
                   <div class="flex items-center gap-1 font-semibold text-black">
@@ -904,6 +912,11 @@
     {
       "type": "inspired_by",
       "name": "Inspired By",
+      "limit": 1
+    },
+    {
+      "type": "inspiration",
+      "name": "Inspiration",
       "limit": 1
     },
     {
