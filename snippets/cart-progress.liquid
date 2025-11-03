@@ -16,18 +16,6 @@
         2 items 50% OFF</p>
     </div>
     <div class="col-span-3">
-      <div class="h-2 w-full rounded-full !block bg-[#137c44] mb-2">
-        {% if item_count >= 3 %}
-          <div class="h-2 w-full rounded-full !block bg-[#137c44]"></div>
-        {% else %}
-          <div class="h-2 w-full rounded-full !block bg-gray-300"></div>
-        {% endif %}
-      </div>
-      <p class="my-0 text-xs text-center">
-        3 items 66% OFF
-      </p>
-    </div>
-    <div class="col-span-3">
       <div class="h-2 w-full rounded-full !block mb-2 relative {% if total_price >= 5000 %}bg-[#137c44] {% else %}bg-gray-300{% endif %}">
         <img
           class="absolute -top-1.5 left-[40%] transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-xl"
@@ -38,6 +26,18 @@
       </div>
       <p class="my-0 text-xs text-center">
         $50+ Free Shipping
+      </p>
+    </div>
+    <div class="col-span-3">
+      <div class="h-2 w-full rounded-full !block bg-[#137c44] mb-2">
+        {% if item_count >= 3 %}
+          <div class="h-2 w-full rounded-full !block bg-[#137c44]"></div>
+        {% else %}
+          <div class="h-2 w-full rounded-full !block bg-gray-300"></div>
+        {% endif %}
+      </div>
+      <p class="my-0 text-xs text-center">
+        3 items 66% OFF
       </p>
     </div>
   </div>
