@@ -169,6 +169,10 @@
     grid-column: span 6 / span 6
 }
 
+.col-span-5 {
+    grid-column: span 5 / span 5
+}
+
 .\!m-0 {
     margin: 0px !important
 }
@@ -1163,6 +1167,11 @@
     border-color: rgb(255 255 255 / var(--tw-border-opacity, 1))
 }
 
+.border-black {
+    --tw-border-opacity: 1;
+    border-color: rgb(0 0 0 / var(--tw-border-opacity, 1))
+}
+
 .border-b-gray-100 {
     --tw-border-opacity: 1;
     border-bottom-color: rgb(243 244 246 / var(--tw-border-opacity, 1))
@@ -1555,6 +1564,11 @@
     padding-bottom: 32px
 }
 
+.py-0 {
+    padding-top: 0px;
+    padding-bottom: 0px
+}
+
 .\!pb-3 {
     padding-bottom: 12px !important
 }
@@ -1647,12 +1661,20 @@
     padding-top: 32px
 }
 
+.pb-3 {
+    padding-bottom: 12px
+}
+
 .text-left {
     text-align: left
 }
 
 .text-center {
     text-align: center
+}
+
+.text-right {
+    text-align: right
 }
 
 .\!font-sans {
@@ -1709,6 +1731,21 @@
 .text-xs {
     font-size: 12px;
     line-height: 16px
+}
+
+.text-5xl {
+    font-size: 48px;
+    line-height: 1
+}
+
+.text-7xl {
+    font-size: 72px;
+    line-height: 1
+}
+
+.text-6xl {
+    font-size: 60px;
+    line-height: 1
 }
 
 .\!font-black {
@@ -1934,6 +1971,11 @@
 .text-yellow-500 {
     --tw-text-opacity: 1;
     color: rgb(234 179 8 / var(--tw-text-opacity, 1))
+}
+
+.text-\[\#22613a\] {
+    --tw-text-opacity: 1;
+    color: rgb(34 97 58 / var(--tw-text-opacity, 1))
 }
 
 .line-through {
@@ -2275,6 +2317,10 @@
     opacity: 0.75
 }
 
+.hover\:\[text-decoration\:none\]:hover {
+    text-decoration: none
+}
+
 .focus\:rounded:focus {
     border-radius: 4px
 }
@@ -2366,6 +2412,14 @@
 
     .md\:col-span-5 {
         grid-column: span 5 / span 5
+    }
+
+    .md\:col-span-4 {
+        grid-column: span 4 / span 4
+    }
+
+    .md\:col-span-6 {
+        grid-column: span 6 / span 6
     }
 
     .md\:mt-14 {
@@ -2486,6 +2540,10 @@
         gap: 32px
     }
 
+    .md\:gap-3 {
+        gap: 12px
+    }
+
     .md\:space-y-6 > :not([hidden]) ~ :not([hidden]) {
         --tw-space-y-reverse: 0;
         margin-top: calc(24px * calc(1 - var(--tw-space-y-reverse)));
@@ -2540,6 +2598,10 @@
 
     .md\:pt-12 {
         padding-top: 48px
+    }
+
+    .md\:pb-4 {
+        padding-bottom: 16px
     }
 
     .md\:text-left {
