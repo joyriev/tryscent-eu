@@ -1,4 +1,4 @@
-{% assign chosen_product = all_products['blue-steel'] %}
+{% assign chosen_product = all_products['citrus-woods-incense'] %}
 <style>
   [x-cloak] {
     display: none !important;
@@ -9,25 +9,52 @@
 <div class="page-width py-8 md:py-10">
   {% comment %} Bundle Heading {% endcomment %}
   <div class="text-center pb-8 md:pb-12 border-0 border-b border-solid border-gray-200">
-    <h1 class="font-bold text-4xl md:text-6xl my-0 leading-snug">Designer Scents For 90% Less.</h1>
-    <p class="text-xl md:text-3xl font-medium text-gray-600">Same ingredients. Same longevity. <br class="md:hidden"> Zero markup.</p>
-    <div class="flex items-center gap-2 justify-center">
-      <div class="rating">
-        <img
-          class="h-6 md:h-10 w-auto"
-          src="//tryscent.co/cdn/shop/t/56/assets/rating-stars.svg?v=134568026622208682831756094205"
-          alt="*****"
-          height=""
-          width="">
-      </div>
-      <span class="text-xl md:text-3xl">(5 / 5) 2785 Reviews</span>
+    <h1 class="font-bold text-2xl md:text-5xl my-0 leading-snug">🔥 Black Friday Just Got Personal. <br class="md:inline-block [display:none]"> Double Your Scents, Not Your Spend. 🔥</h1>
+    <p class="text-xl md:text-3xl font-medium text-gray-600">Buy your favorite fragrances, and we’ll match you bottle for bottle. <br> No limits. No tricks.</p>
+    <div class="text-xl md:text-3xl font-medium text-gray-600 countdown">
+      COUNTDOWN:
+      <span id="countdown-timer" class="font-semibold text-red-600">--:--:--</span>
     </div>
+
+    <script>
+        // Target date (YYYY-MM-DDTHH:mm:ss format)
+        const targetDate = new Date('2025-12-31T23:59:59').getTime();
+
+        // Function to update countdown
+        function updateCountdown() {
+          const now = new Date().getTime();
+          const distance = targetDate - now;
+
+          if (distance <= 0) {
+      document.getElementById('countdown-timer').textContent = '00:00:00';
+      clearInterval(timer);
+      return;
+          }
+
+          const hours = Math.floor((distance / (1000 * 60 * 60)) % 24)
+      .toString()
+      .padStart(2, '0');
+          const minutes = Math.floor((distance / (1000 * 60)) % 60)
+      .toString()
+      .padStart(2, '0');
+          const seconds = Math.floor((distance / 1000) % 60)
+      .toString()
+      .padStart(2, '0');
+
+          document.getElementById('countdown-timer').textContent = `${hours}:${minutes}:${seconds}`;
+        }
+
+        // Update every second
+        const timer = setInterval(updateCountdown, 1000);
+        updateCountdown(); // Initial call
+    </script>
+
   </div>
   {% comment %} X-Application Starts {% endcomment %}
   <div x-data>
-    <div class="text-center pt-8 md:pt-12">
-      <h2 class="text-2xl md:text-4xl font-bold my-0">Select Size!</h2>
-      <p class="text-lg md:text-2xl font-medium text-gray-600 my-4">67% choose 100ML</p>
+    <div class="pt-8 md:pt-12 flex flex-wrap gap-2 justify-center items-center mb-3 md:mb-6">
+      <h2 class="text-2xl md:text-4xl font-bold my-0">Select Size:</h2>
+      <p class="text-lg md:text-2xl font-medium text-gray-600 my-0 leading-snug">67% choose 100ML</p>
     </div>
     <div class="mx-auto max-w-screen-sm grid grid-cols-3 pt-4 gap-2 md:gap-6">
       {% for variant in chosen_product.variants %}
@@ -42,74 +69,52 @@
             {% if variant.title == '100ML' %}
               <div class="absolute -top-4 left-1/2 [translate:-50%] bg-[linear-gradient(to_right,_#15803d,_#4ade80)] text-white px-3 py-1 text-xs md:text-base uppercase leading-snug rounded-full font-bold">Bestseller</div>
             {% endif %}
-            <div class="variant-image">
-              <img
-                class="w-full aspect-square object-contain"
-                src="{{ variant.image | image_url: width: 200, height: 200 }}"
-                height=""
-                width=""
-                alt="{{ variant.title }}">
-            </div>
+
             <h4 class="font-semibold text-lg md:text-xl my-0">{{ variant.title }}</h4>
           </button>
         {% endunless %}
       {% endfor %}
     </div>
-    <div class="flex flex-wrap md:flex-row-reverse gap-2 md:gap-6 border-0 border-y border-solid border-gray-200 py-8 mb-6">
-      <div class="flex-grow grid grid-cols-2 gap-2 md:gap-6 mb-0">
-        <button
-          class="bg-white rounded-xl p-0 border-3 border-solid border-gray-200 cursor-pointer relative"
-          data-bundle-type="4+1"
-          @click="$store.bundleBuilder.selectedBundleType = '5+4'"
-          :class="$store.bundleBuilder.selectedBundleType === '5+4' ? 'border-green-600' : ''">
-          <div class="absolute -top-4 left-1/2 [translate:-50%] bg-[linear-gradient(to_right,_#15803d,_#4ade80)] text-white px-3 py-1 text-xs md:text-base uppercase leading-snug rounded-full font-bold whitespace-nowrap">Free Shipping</div>
-          <div class="p-4 pt-6">
-            <h3 class="bundle-type-desc my-0 font-semibold tracking-normal">Buy 5, Get 4 Free</h3>
-            <p class="my-2 text-xl md:text-2xl tracking-normal font-bold text-saffron" x-html="$store.bundleBuilder.getBundlePrice('5+4')">00.00</p>
-            <p class="my-0 text-green-700 font-semibold tracking-normal text-base leading-snug md:text-lg" x-html="$store.bundleBuilder.getPerBottlePrice('5+4')">00.00</p>
-          </div>
-          <p class="my-0 text-white bg-green-700 py-1 text-base font-bold rounded-b-[10px]" x-html="$store.bundleBuilder.getBundleSavings('5+4')">SAVE 00.00</p>
-        </button>
-        <button
-          class="bg-white rounded-xl p-0 border-3 border-solid border-gray-200 cursor-pointer relative"
-          data-bundle-type="5+1"
-          @click="$store.bundleBuilder.selectedBundleType = '8+8'"
-          :class="$store.bundleBuilder.selectedBundleType === '8+8' ? 'border-green-600' : ''">
-          <div class="absolute -top-4 left-1/2 [translate:-50%] bg-[linear-gradient(to_right,_#e64a4a,_#ff8a8a)] text-white px-3 py-1 text-xs md:text-base uppercase leading-snug rounded-full font-bold whitespace-nowrap">Best Value</div>
-          <div class="p-4 pt-6">
-            <h3 class="bundle-type-desc my-0 font-semibold tracking-normal">Buy 8, Get 8 Free</h3>
-            <p class="my-2 text-xl md:text-2xl tracking-normal font-bold text-saffron" x-html="$store.bundleBuilder.getBundlePrice('8+8')">00.00</p>
-            <p class="my-0 text-green-700 font-semibold tracking-normal text-base leading-snug md:text-lg" x-html="$store.bundleBuilder.getPerBottlePrice('8+8')">00.00</p>
-          </div>
-          <p class="my-0 text-white bg-green-700 py-1 text-base font-bold rounded-b-[10px]" x-html="$store.bundleBuilder.getBundleSavings('8+8')">SAVE 00.00</p>
-        </button>
-      </div>
-      <div class="flex-grow grid grid-cols-2 gap-2 md:gap-6 mb-0">
-        <button
-          class="bg-white rounded-xl p-0 border-3 border-solid border-gray-200 cursor-pointer relative"
-          data-bundle-type="2+1"
-          @click="$store.bundleBuilder.selectedBundleType = '2+1'"
-          :class="$store.bundleBuilder.selectedBundleType === '2+1' ? 'border-green-600' : ''">
-          <div class="p-4 pt-6">
-            <h3 class="bundle-type-desc my-0 font-semibold tracking-normal">Buy 2, Get 1 Free</h3>
-            <p class="my-2 text-xl md:text-2xl tracking-normal font-bold text-saffron" x-html="$store.bundleBuilder.getBundlePrice('2+1')">00.00</p>
-            <p class="my-0 text-green-700 font-semibold tracking-normal text-base leading-snug md:text-lg" x-html="$store.bundleBuilder.getPerBottlePrice('2+1')">00.00</p>
-          </div>
-          <p class="my-0 text-white bg-green-700 py-1 text-base font-bold rounded-b-[10px]" x-html="$store.bundleBuilder.getBundleSavings('2+1')">SAVE 00.00</p>
-        </button>
-        <button
-          class="bg-white rounded-xl p-0 border-3 border-solid border-gray-200 cursor-pointer relative"
-          data-bundle-type="3+2"
-          @click="$store.bundleBuilder.selectedBundleType = '3+2'"
-          :class="$store.bundleBuilder.selectedBundleType === '3+2' ? 'border-green-600' : ''">
-          <div class="p-4 pt-6">
-            <h3 class="bundle-type-desc my-0 font-semibold tracking-normal">Buy 3, Get 2 Free</h3>
-            <p class="my-2 text-xl md:text-2xl tracking-normal font-bold text-saffron" x-html="$store.bundleBuilder.getBundlePrice('3+2')">00.00</p>
-            <p class="my-0 text-green-700 font-semibold tracking-normal text-base leading-snug md:text-lg" x-html="$store.bundleBuilder.getPerBottlePrice('3+2')">00.00</p>
-          </div>
-          <p class="my-0 text-white bg-green-700 py-1 text-base font-bold rounded-b-[10px]" x-html="$store.bundleBuilder.getBundleSavings('3+2')">SAVE 00.00</p>
-        </button>
-      </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-y-6 gap-x-3 md:gap-x-6 border-0 border-y border-solid border-gray-200 py-8 mb-6">
+      <button
+        class="bg-white rounded-xl p-0 border-3 border-solid border-gray-200 cursor-pointer relative flex flex-col justify-between"
+        data-bundle-type="5+1"
+        @click="$store.bundleBuilder.selectedBundleType = '6+6'"
+        :class="$store.bundleBuilder.selectedBundleType === '6+6' ? 'border-green-600' : ''">
+        <div class="absolute -top-4 left-1/2 [translate:-50%] bg-[linear-gradient(to_right,_#e64a4a,_#ff8a8a)] text-white px-3 py-1 text-xs md:text-base uppercase leading-snug rounded-full font-bold whitespace-nowrap">💎 Great Deal</div>
+        <div class="p-4 pt-6">
+          <h3 class="bundle-type-desc my-0 font-semibold tracking-normal">Buy 6, Get 6 Free</h3>
+          <p class="my-2 text-xl md:text-2xl tracking-normal font-bold text-saffron" x-html="$store.bundleBuilder.getBundlePrice('6+6')">00.00</p>
+          <p class="my-0 text-green-700 font-semibold tracking-normal text-base leading-snug md:text-lg" x-html="$store.bundleBuilder.getPerBottlePrice('6+6')">00.00</p>
+        </div>
+        <p class="my-0 text-white bg-green-700 py-1 text-base font-bold rounded-b-[10px]" x-html="$store.bundleBuilder.getBundleSavings('6+6')">SAVE 00.00</p>
+      </button>
+      <button
+        class="bg-white rounded-xl p-0 border-3 border-solid border-gray-200 cursor-pointer relative flex flex-col justify-between"
+        data-bundle-type="8+12"
+        @click="$store.bundleBuilder.selectedBundleType = '8+12'"
+        :class="$store.bundleBuilder.selectedBundleType === '8+12' ? 'border-green-600' : ''">
+        <div class="absolute -top-4 left-1/2 [translate:-50%] bg-[linear-gradient(to_right,_#15803d,_#4ade80)] text-white px-3 py-1 text-xs md:text-base uppercase leading-snug rounded-full font-bold whitespace-nowrap">⭐ Better Deal</div>
+        <div class="p-4 pt-6">
+          <h3 class="bundle-type-desc my-0 font-semibold tracking-normal">Buy 8, Get 12 Free</h3>
+          <p class="my-2 text-xl md:text-2xl tracking-normal font-bold text-saffron" x-html="$store.bundleBuilder.getBundlePrice('8+12')">00.00</p>
+          <p class="my-0 text-green-700 font-semibold tracking-normal text-base leading-snug md:text-lg" x-html="$store.bundleBuilder.getPerBottlePrice('8+12')">00.00</p>
+        </div>
+        <p class="my-0 text-white bg-green-700 py-1 text-base font-bold rounded-b-[10px]" x-html="$store.bundleBuilder.getBundleSavings('8+12')">SAVE 00.00</p>
+      </button>
+      <button
+        class="col-span-2 md:col-span-1 bg-white rounded-xl p-0 border-3 border-solid border-gray-200 cursor-pointer relative flex flex-col justify-between"
+        data-bundle-type="10+16"
+        @click="$store.bundleBuilder.selectedBundleType = '10+16'"
+        :class="$store.bundleBuilder.selectedBundleType === '10+16' ? 'border-green-600' : ''">
+        <div class="absolute -top-4 left-1/2 [translate:-50%] bg-[linear-gradient(to_right,_#4a78e6,_#ffae8a)] text-white px-3 py-1 text-xs md:text-base uppercase leading-snug rounded-full font-bold whitespace-nowrap">🔥 Best Deal</div>
+        <div class="p-4 pt-6">
+          <h3 class="bundle-type-desc my-0 font-semibold tracking-normal">Buy 10, Get 16 Free</h3>
+          <p class="my-2 text-xl md:text-2xl tracking-normal font-bold text-saffron" x-html="$store.bundleBuilder.getBundlePrice('10+16')">00.00</p>
+          <p class="my-0 text-green-700 font-semibold tracking-normal text-base leading-snug md:text-lg" x-html="$store.bundleBuilder.getPerBottlePrice('10+16')">00.00</p>
+        </div>
+        <p class="my-0 text-white bg-green-700 py-1 text-base font-bold rounded-b-[10px]" x-html="$store.bundleBuilder.getBundleSavings('10+16')">SAVE 00.00</p>
+      </button>
     </div>
     <div class="grid md:grid-cols-8 gap-6">
       <div class="md:col-span-5">
@@ -144,17 +149,26 @@
           <template x-for="product in $store.bundleBuilder.availableProducts" :key="product.id">
             <template x-if="$store.bundleBuilder.shouldShowProduct(product)">
               <div class="border border-solid rounded-lg p-4 flex flex-col" :class="$store.bundleBuilder.isProductSelected(product.id) ? 'border-green-600' : 'border-gray-200'">
-                <div class="flex justify-center mb-4">
+                <div class="flex justify-center relative">
                   <img
                     :src="product.image"
                     :alt="product.name"
                     height=""
                     width=""
-                    class="w-full h-auto object-cover rounded mr-2">
+                    class="w-full h-auto object-cover rounded">
+                  <p class="text-gray-600 text-sm font-semibold absolute top-1 right-1 my-0" x-text="$store.bundleBuilder.selectedVariant">50ml</p>
                 </div>
-                <div class="relative mt-2 flex-1">
-                  <p class="text-gray-600 text-sm absolute -top-6 right-0 my-0" x-text="$store.bundleBuilder.selectedVariant">50ml</p>
-                  <h4 class="font-bold text-gray-900 my-1" x-text="product.name"></h4>
+                <div class="mt-2 flex-1">
+                  <h4 class="font-bold text-gray-900 mt-1 mb-0" x-text="product.name"></h4>
+                  <p class="mt-0 mb-1">"...<span x-text="product.nuta"></span>..."</p>
+                  <div class="flex items-center">
+                    <img
+                      src="{{ 'rating-stars.svg' | asset_url }}"
+                      alt="*****"
+                      height="13"
+                      width="66">
+                    <span class="text-gray-600 text-sm ml-1">(<span x-text="product.ratingCount"></span>)</span>
+                  </div>
                   <p class="text-gray-900 font-semibold mb-2 mt-0" x-html="product.variants[$store.bundleBuilder.selectedVariant].originalPrice"></p>
                 </div>
                 <button
@@ -189,7 +203,7 @@
               role="progressbar"
               :style="{ width: $store.bundleBuilder.progressWidth }"></div>
             <div class="absolute -top-1 left-0 w-full flex justify-between px-2">
-              <template x-for="i in $store.bundleBuilder.bundleLength">
+              <template x-for="i in Array.from({length: $store.bundleBuilder.bundleLength}, (_, i) => i + 1).filter(i => i % 2 === 0)">
                 <span
                   class="w-6 h-6 flex items-center justify-center text-green-700 border-2 border-solid text-xs font-bold rounded-full"
                   x-text="i"
@@ -198,7 +212,7 @@
             </div>
           </div>
           <template x-if="$store.bundleBuilder.selectedProductsLength > 0">
-            <div class="space-y-2 my-8">
+            <div class="space-y-2 my-8 max-h-[60vh] overflow-y-auto">
               <template x-for="product in $store.bundleBuilder.selectedProducts" :key="product.data.id">
                 <div class="flex items-center gap-3 p-3 border border-solid border-gray-200 rounded-lg bg-white relative">
                   <button class="text-saffron font-bold cursor-pointer border-0" @click="$store.bundleBuilder.deleteProduct(product.data.id)">×</button>
@@ -230,8 +244,16 @@
           <button
             @click="$store.bundleBuilder.addBundleToCart()"
             class="w-full text-white text-xl bg-green-700 py-3 px-4 rounded-full font-bold transition-colors border-0 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
-            :disabled="$store.bundleBuilder.selectedProductsLength < $store.bundleBuilder.bundleLength">
-            <span x-text="$store.bundleBuilder.selectedProductsLength >= $store.bundleBuilder.bundleLength ? 'CHECKOUT' : `ADD ${$store.bundleBuilder.bundleLength - $store.bundleBuilder.selectedProductsLength} MORE SCENT${$store.bundleBuilder.bundleLength - $store.bundleBuilder.selectedProductsLength > 1 ? 'S' : ''}`"></span>
+            :disabled="$store.bundleBuilder.selectedProductsLength < $store.bundleBuilder.bundleLength || $store.bundleBuilder.addingToCart">
+            <span x-show="!$store.bundleBuilder.addingToCart" x-text="$store.bundleBuilder.selectedProductsLength >= $store.bundleBuilder.bundleLength ? 'CHECKOUT' : `ADD ${$store.bundleBuilder.bundleLength - $store.bundleBuilder.selectedProductsLength} MORE SCENT${$store.bundleBuilder.bundleLength - $store.bundleBuilder.selectedProductsLength > 1 ? 'S' : ''}`"></span>
+            <div x-show="$store.bundleBuilder.addingToCart" role="status" class="flex gap-2 items-center justify-center">
+              <span>Adding...</span>
+              <svg aria-hidden="true" class="size-6 animate-spin" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="#fff"></path>
+                <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="#3b7e44"></path>
+              </svg>
+              <span class="sr-only">Loading...</span>
+            </div>
           </button>
         </div>
       </div>
@@ -264,7 +286,7 @@
           role="progressbar"
           :style="{ width: $store.bundleBuilder.progressWidth }"></div>
         <div class="absolute -top-1 left-0 w-full flex justify-between px-2">
-          <template x-for="i in $store.bundleBuilder.bundleLength">
+          <template x-for="i in Array.from({length: $store.bundleBuilder.bundleLength}, (_, i) => i + 1).filter(i => i % 2 === 0)">
             <span
               class="w-6 h-6 flex items-center justify-center text-green-700 border-2 border-solid text-xs font-bold rounded-full"
               x-text="i"
@@ -304,17 +326,25 @@
       </div>
       <button
         @click="$store.bundleBuilder.addBundleToCart()"
-        :disabled="$store.bundleBuilder.selectedProductsLength < $store.bundleBuilder.bundleLength"
+        :disabled="$store.bundleBuilder.selectedProductsLength < $store.bundleBuilder.bundleLength || $store.bundleBuilder.addingToCart"
         class="w-full py-3 px-7 text-xl rounded-full font-bold border-0 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
         :class="$store.bundleBuilder.selectedProductsLength < $store.bundleBuilder.bundleLength ? 'bg-gray-200 text-gray-800' : 'bg-green-700 text-white'">
-        CHECKOUT
+        <span x-show="!$store.bundleBuilder.addingToCart">CHECKOUT</span>
+        <div x-show="$store.bundleBuilder.addingToCart" role="status" class="flex gap-2 items-center justify-center">
+          <span>Adding...</span>
+          <svg aria-hidden="true" class="size-6 animate-spin" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="#fff"></path>
+            <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="#3b7e44"></path>
+          </svg>
+          <span class="sr-only">Loading...</span>
+        </div>
       </button>
     </div>
   </div>
 </div>
 
 {% liquid
-  assign bundle_collection = collections['tryscent']
+  assign bundle_collection = collections['best-sellers']
   unless bundle_collection
     assign bundle_collection = collections.first
   endunless
@@ -325,22 +355,19 @@
         {% for variant in chosen_product.variants %}
           "{{ variant.title }}": {
             bundle: {
-                '2+1': "{{ variant.price | times: 2 | money }}",
-                '3+2': "{{ variant.price | times: 3 | money }}",
-                '5+4': "{{ variant.price | times: 5 | money }}",
-                '8+8': "{{ variant.price | times: 8 | money }}"
+                '8+12': "{{ variant.price | times: 8 | money }}",
+                '10+16': "{{ variant.price | times: 10 | money }}",
+                '6+6': "{{ variant.price | times: 6 | money }}"
             },
             savings: {
-                '2+1': "{{ variant.price | times: 1 | money }}",
-                '3+2': "{{ variant.price | times: 2 | money }}",
-                '5+4': "{{ variant.price | times: 4 | money }}",
-                '8+8': "{{ variant.price | times: 8 | money }}"
+                '8+12': "{{ variant.price | times: 12 | money }}",
+                '10+16': "{{ variant.price | times: 16 | money }}",
+                '6+6': "{{ variant.price | times: 6 | money }}"
             },
             perBottle: {
-                '2+1': "{{ variant.price | times: 2 | divided_by: 3 | money }}",
-                '3+2': "{{ variant.price | times: 3 | divided_by: 5 | money }}",
-                '5+4': "{{ variant.price | times: 5 | divided_by: 9 | money }}",
-                '8+8': "{{ variant.price | times: 8 | divided_by: 16 | money }}"
+              '6+6': "{{ variant.price | times: 6 | divided_by: 12 | money }}",
+              '8+12': "{{ variant.price | times: 8 | divided_by: 20 | money }}",
+              '10+16': "{{ variant.price | times: 10 | divided_by: 26 | money }}"
             }
           },
         {% endfor %}
@@ -349,7 +376,7 @@
   document.addEventListener('alpine:init', function() {
     Alpine.store('bundleBuilder', {
       selectedVariant: "100ML",
-      selectedBundleType: "3+2",
+      selectedBundleType: "10+16",
       activeCategory: "All",
       selectedBrand: "",
       searchText: "",
@@ -363,6 +390,7 @@
             name: "{{ bundle_product.title }}",
             image: "{{ bundle_product.featured_image | image_url }}",
             ratingCount: "{{ bundle_product.metafields.reviews.rating_count }}",
+            nuta: "{{ bundle_product.metafields.custom.nuta }}",
             tags: {{ bundle_product.tags | json }},
             variants: {
               {% for variant in bundle_product.variants %}
@@ -425,22 +453,37 @@
         const width = (this.selectedProductsLength / this.bundleLength) * 100;
         return width + "%";
       },
-      addBundleToCart() {
+      async addBundleToCart() {
         this.addingToCart = true;
 
-        let checkoutURl = '/cart/';
-        this.selectedProducts.forEach((product, index) => {
-          if (index === 0) {
-            checkoutURl += `${product.data.variants[this.selectedVariant].id}:${product.quantity}`;
-          } else {
-            checkoutURl += `,${product.data.variants[this.selectedVariant].id}:${product.quantity}`;
-          }
+        const items = this.selectedProducts.map((product) => {
+          return {
+            id: product.data.variants[this.selectedVariant].id,
+            quantity: product.quantity,
+            properties: {
+              "Inspired By": product.data.nuta,
+            }
+          };
         });
 
-        window.location.href = checkoutURl;
-        setTimeout(() => {
-          this.addingToCart = false;
-        }, 3000);
+        try {
+          await fetch('/cart/add.js', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json',
+            },
+            body: JSON.stringify({ items })
+          });
+
+          window.location.href = '/checkout';
+        } catch (error) {
+          console.error('Error adding bundle to cart:', error);
+        } finally {
+          setTimeout(() => {
+            this.addingToCart = false;
+          }, 3000);
+        }
       },
       shouldShowProduct(product) {
         const matchesCategory = this.activeCategory === 'All' || 
