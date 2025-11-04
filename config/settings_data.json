@@ -158,6 +158,13 @@
         "type": "shopify://apps/t-lab-ai-language-translate/blocks/custom_translations/b5b83690-efd4-434d-8c6a-a5cef4019faf",
         "disabled": false,
         "settings": {}
+      },
+      "4113930173634242220": {
+        "type": "shopify://apps/referral-program-shopjar/blocks/app-shopjar/bf205236-47cf-42ff-acf9-5de1b0804e4d",
+        "disabled": false,
+        "settings": {
+          "storefront_api": "f63cce4d1e184cf76625f6b567ce9f9c"
+        }
       }
     },
     "color_schemes": {
