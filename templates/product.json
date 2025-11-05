@@ -23,6 +23,10 @@
             "number": 0
           }
         },
+        "judge_me_reviews_preview_badge_cP6icA": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
         "inspiration_eie3ih": {
           "type": "inspiration",
           "settings": {}
@@ -202,6 +206,7 @@
       "block_order": [
         "title",
         "cheaper_than_yDGYG9",
+        "judge_me_reviews_preview_badge_cP6icA",
         "inspiration_eie3ih",
         "selling_points_9tdid6",
         "mobile_gallery_FUEn6Y",
