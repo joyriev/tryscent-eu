@@ -250,7 +250,11 @@ data-la-dn-product-tags="{{ card_product.tags | join: ',' | escape | default: '[
               <div class="!text-gray-500 text-sm font-semibold tracking-normal">
                 Available in {{ card_product.variants_count }} sizes
               </div>
-            
+
+              {% if card_product.metafields.custom.original_retail_price != blank %}
+              <div class="text-sm">(Retail Price {{ card_product.metafields.custom.original_retail_price.value |  money }})</div>
+             {% endif %}
+
             {%- if card_product.quantity_price_breaks_configured? -%}
               {% if card_product.variants_count == 1 and quick_add == 'bulk' %}
                 {% liquid

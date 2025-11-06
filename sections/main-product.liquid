@@ -94,12 +94,28 @@
                   <span class="italic tracking-tighter">Inspired by</span> <a href="/search?q={{ product.metafields.custom.forgaylawyers | url_encode }}" class="font-semibold text-lg not-italic tracking-tight text-gray-900 ![text-decoration:none]">{{ product.metafields.custom.forgaylawyers }}</a>
                 </div>
               {% when 'inspiration' %}
-                <div class="flex items-center gap-2 mb-3">
-                  <img class="object-contain object-center bg-white" src="{{ product.metafields.custom.inspiration.value.image |  image_url }}" alt="{{ product.metafields.custom.inspiration.value.image.alt | escape }}" width="45" height="45">
-                  <div>
-                    <h4 class="font-semibold my-0 line-clamp-1">{{ product.metafields.custom.inspiration.value.name }}</h4>
-                    <p class="text-sm my-0">Inspiration</p>
+                <div>
+                  <div class="flex items-center gap-2 mb-3">
+                    <img class="object-contain object-center bg-white" src="{{ product.metafields.custom.inspiration.value.image |  image_url }}" alt="{{ product.metafields.custom.inspiration.value.image.alt | escape }}" width="45" height="45">
+                    <div>
+                      <h4 class="font-semibold my-0 line-clamp-1">{{ product.metafields.custom.inspiration.value.name }}</h4>
+                      <p class="text-sm my-0">Inspiration</p>
+                    </div>
                   </div>
+                  {% if product.metafields.custom.original_retail_price != blank %}
+                    <div class="text-sm">(Retail Price {{ product.metafields.custom.original_retail_price.value |  money }})</div>
+                  {% endif %}
+                  {% if product.metafields.custom.scent_intensity != blank %}
+                    <div class="flex items-center gap-[5px]">
+                    Scent Intensity Scale: <span class="text-highlight leading-4">Statement</span>
+                    {% assign intensity = product.metafields.custom.scent_intensity.value | times: 1 %}
+                    <div class="flex gap-[5px] items-center justify-center ml-1">
+                        {% for i in (1..3) %}
+                            <div class="w-[8px] h-[8px] rounded-full {% if i <= intensity %}bg-[#22613A]{% else %}bg-gray-300{% endif %} !inline-block"></div>
+                        {% endfor %}
+                    </div>
+                  </div>
+                  {% endif %}
                 </div>
               {% when 'cheaper_than' %}
                 {% if product.metafields.custom.nuta  != blank %}
