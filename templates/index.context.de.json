@@ -8,18 +8,17 @@
  * ------------------------------------------------------------
  */
 {
-  "markets": {
-    "de": {
-      "parent": "@default"
-    },
-    "sweden": {
-      "parent": "@default"
-    },
-    "all-markets": {
-      "parent": "@default"
-    },
-    "united-states": {
-      "parent": "@default"
+  "parent": "index.json",
+  "context": {
+    "market": "de"
+  },
+  "sections": {
+    "home_hero_banner_AjXmHY": {
+      "settings": {
+        "image": "shopify://shop_images/early_bf_horizontal_german.png",
+        "mobile_image": "shopify://shop_images/mobile_banner_german.png"
+      },
+      "blocks": {}
     }
   }
 }
