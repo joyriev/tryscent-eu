@@ -250,6 +250,11 @@
     margin-bottom: 32px
 }
 
+.my-6 {
+    margin-top: 24px;
+    margin-bottom: 24px
+}
+
 .\!mb-0 {
     margin-bottom: 0px !important
 }
@@ -539,6 +544,11 @@
 .size-\[14px\] {
     width: 14px;
     height: 14px
+}
+
+.size-8 {
+    width: 32px;
+    height: 32px
 }
 
 .\!h-8 {
@@ -1976,6 +1986,16 @@
     color: rgb(234 179 8 / var(--tw-text-opacity, 1))
 }
 
+.text-red-500 {
+    --tw-text-opacity: 1;
+    color: rgb(239 68 68 / var(--tw-text-opacity, 1))
+}
+
+.text-slate-900 {
+    --tw-text-opacity: 1;
+    color: rgb(15 23 42 / var(--tw-text-opacity, 1))
+}
+
 .line-through {
     text-decoration-line: line-through
 }
@@ -2298,6 +2318,11 @@
     background-color: rgb(153 27 27 / var(--tw-bg-opacity, 1))
 }
 
+.hover\:bg-gray-900:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(17 24 39 / var(--tw-bg-opacity, 1))
+}
+
 .hover\:text-white:hover {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity, 1))
@@ -2410,6 +2435,11 @@
 
     .md\:col-span-5 {
         grid-column: span 5 / span 5
+    }
+
+    .md\:mx-auto {
+        margin-left: auto;
+        margin-right: auto
     }
 
     .md\:mb-6 {
@@ -2593,6 +2623,10 @@
 
     .md\:text-left {
         text-align: left
+    }
+
+    .md\:text-center {
+        text-align: center
     }
 
     .md\:text-2xl {
