@@ -46,9 +46,6 @@ cart-items.is-empty .title-wrapper-with-link,
     padding: 7rem 0 1rem;
   }
 
-  .cart__empty-text {
-    margin: 0 0 3rem;
-  }
 }
 
 cart-items {
