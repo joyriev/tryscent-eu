@@ -17,6 +17,9 @@
     },
     "all-markets": {
       "parent": "@default"
+    },
+    "united-states": {
+      "parent": "@default"
     }
   }
 }

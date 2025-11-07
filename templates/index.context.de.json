@@ -12,5 +12,13 @@
   "context": {
     "market": "de"
   },
-  "sections": {}
+  "sections": {
+    "home_hero_banner_AjXmHY": {
+      "settings": {
+        "image": "shopify://shop_images/early_bf_horizontal_german.png",
+        "mobile_image": "shopify://shop_images/mobile_banner_german.png"
+      },
+      "blocks": {}
+    }
+  }
 }

@@ -10,7 +10,7 @@
 {
   "parent": "index.json",
   "context": {
-    "market": "all-markets"
+    "market": "sweden"
   },
   "sections": {}
 }
