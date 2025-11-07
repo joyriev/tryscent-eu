@@ -2442,6 +2442,11 @@
         margin-right: auto
     }
 
+    .md\:mx-0 {
+        margin-left: 0px;
+        margin-right: 0px
+    }
+
     .md\:mb-6 {
         margin-bottom: 24px
     }
@@ -2569,6 +2574,10 @@
 
     .md\:rounded-2xl {
         border-radius: 16px
+    }
+
+    .md\:rounded-lg {
+        border-radius: 8px
     }
 
     .md\:bg-\[center_75\%\] {
