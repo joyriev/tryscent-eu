@@ -787,6 +787,7 @@
       "block_order": [
         "judge_me_reviews_review_widget_AgrTYp"
       ],
+      "disabled": true,
       "settings": {
         "include_margins": true
       }
