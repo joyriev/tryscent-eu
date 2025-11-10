@@ -35,6 +35,10 @@
           "type": "selling_points",
           "settings": {}
         },
+        "fd_product_groups_product_group_CWqTBn": {
+          "type": "shopify://apps/fd-product-groups/blocks/product-group/c4faf6e2-c14b-4cc5-ad31-cf86b1c483fb",
+          "settings": {}
+        },
         "mobile_gallery_FUEn6Y": {
           "type": "mobile_gallery",
           "disabled": true,
@@ -220,6 +224,7 @@
         "judge_me_reviews_preview_badge_cP6icA",
         "inspiration_eie3ih",
         "selling_points_9tdid6",
+        "fd_product_groups_product_group_CWqTBn",
         "mobile_gallery_FUEn6Y",
         "kaching_bundles_app_block_LNLTxR",
         "variant_picker",
