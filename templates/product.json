@@ -39,6 +39,12 @@
           "type": "shopify://apps/fd-product-groups/blocks/product-group/c4faf6e2-c14b-4cc5-ad31-cf86b1c483fb",
           "settings": {}
         },
+        "kaching_bundles_app_block_ay3jxB": {
+          "type": "shopify://apps/kaching-bundles/blocks/app-block/6c637362-a106-4a32-94ac-94dcfd68cdb8",
+          "settings": {
+            "product": "{{product}}"
+          }
+        },
         "mobile_gallery_FUEn6Y": {
           "type": "mobile_gallery",
           "disabled": true,
@@ -225,6 +231,7 @@
         "inspiration_eie3ih",
         "selling_points_9tdid6",
         "fd_product_groups_product_group_CWqTBn",
+        "kaching_bundles_app_block_ay3jxB",
         "mobile_gallery_FUEn6Y",
         "kaching_bundles_app_block_LNLTxR",
         "variant_picker",
