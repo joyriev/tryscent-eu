@@ -75,15 +75,9 @@
           "disabled": true,
           "settings": {}
         },
-        "buy_buttons": {
-          "type": "buy_buttons",
-          "settings": {
-            "show_dynamic_checkout": false,
-            "show_gift_card_recipient": true
-          }
-        },
         "icon_with_text_AWdPmL": {
           "type": "icon-with-text",
+          "disabled": true,
           "settings": {
             "layout": "horizontal",
             "icon_1": "none",
@@ -92,6 +86,13 @@
             "heading_2": "",
             "icon_3": "truck",
             "heading_3": "Free shipping when you buy 2+ perfumes"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": true
           }
         },
         "reactive_variant_selector_JyFrkg": {
@@ -250,8 +251,8 @@
         "variant_picker",
         "price",
         "quantity_selector",
-        "buy_buttons",
         "icon_with_text_AWdPmL",
+        "buy_buttons",
         "reactive_variant_selector_JyFrkg",
         "shipping_text_HCVN8A",
         "custom_liquid_G7fm64",
