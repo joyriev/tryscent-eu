@@ -161,11 +161,6 @@
         "disabled": false,
         "settings": {}
       },
-      "14826766009936288847": {
-        "type": "shopify://apps/discounty/blocks/sdk/d65eb522-0d94-499f-9831-d4b3301f5340",
-        "disabled": false,
-        "settings": {}
-      },
       "5518565996801478076": {
         "type": "shopify://apps/fd-product-groups/blocks/app-embed/c4faf6e2-c14b-4cc5-ad31-cf86b1c483fb",
         "disabled": false,
@@ -174,6 +169,16 @@
       "15557474716127144420": {
         "type": "shopify://apps/kaching-bundles/blocks/app-embed-block/6c637362-a106-4a32-94ac-94dcfd68cdb8",
         "disabled": false,
+        "settings": {}
+      },
+      "17198465164502963513": {
+        "type": "shopify://apps/parcel-panel/blocks/app.embed/fc785c3f-90e0-4c98-a20c-7cde9ba5e4b5",
+        "disabled": false,
+        "settings": {}
+      },
+      "14826766009936288847": {
+        "type": "shopify://apps/discounty/blocks/sdk/d65eb522-0d94-499f-9831-d4b3301f5340",
+        "disabled": true,
         "settings": {}
       }
     },
