@@ -9,7 +9,7 @@
  */
 {
   "current": {
-    "offer_card_image": "shopify://shop_images/early_bf_vertical_1.png",
+    "offer_card_image": "shopify://shop_images/Progetto_senza_titolo_-_2025-11-17T121038.026.png",
     "offer_card_url": "shopify://collections/best-sellers",
     "logo": "shopify://shop_images/TryScent_Wide_Logo_5b97f651-c208-43cb-8ba3-f574e3f749d4_1.svg",
     "logo_width": 140,
@@ -169,11 +169,6 @@
       "17198465164502963513": {
         "type": "shopify://apps/parcel-panel/blocks/app.embed/fc785c3f-90e0-4c98-a20c-7cde9ba5e4b5",
         "disabled": false,
-        "settings": {}
-      },
-      "13477285647392927056": {
-        "type": "shopify://apps/kefi-bundle-builder/blocks/kefi/a54b549a-0a53-4f58-b095-45369cafa8e7",
-        "disabled": true,
         "settings": {}
       },
       "15557474716127144420": {
