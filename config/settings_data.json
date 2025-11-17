@@ -176,9 +176,9 @@
         "disabled": false,
         "settings": {}
       },
-      "14826766009936288847": {
-        "type": "shopify://apps/discounty/blocks/sdk/d65eb522-0d94-499f-9831-d4b3301f5340",
-        "disabled": true,
+      "13477285647392927056": {
+        "type": "shopify://apps/kefi-bundle-builder/blocks/kefi/a54b549a-0a53-4f58-b095-45369cafa8e7",
+        "disabled": false,
         "settings": {}
       }
     },
