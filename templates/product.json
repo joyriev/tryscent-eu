@@ -16,6 +16,11 @@
           "type": "title",
           "settings": {}
         },
+        "selling_points_9tdid6": {
+          "type": "selling_points",
+          "disabled": true,
+          "settings": {}
+        },
         "cheaper_than_yDGYG9": {
           "type": "cheaper_than",
           "disabled": true,
@@ -53,14 +58,7 @@
         },
         "mobile_gallery_FUEn6Y": {
           "type": "mobile_gallery",
-          "disabled": true,
           "settings": {}
-        },
-        "kaching_bundles_app_block_LNLTxR": {
-          "type": "shopify://apps/kaching-bundles/blocks/app-block/6c637362-a106-4a32-94ac-94dcfd68cdb8",
-          "settings": {
-            "product": "{{product}}"
-          }
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -70,36 +68,22 @@
             "swatch_shape": "circle"
           }
         },
+        "price": {
+          "type": "price",
+          "disabled": true,
+          "settings": {}
+        },
         "quantity_selector": {
           "type": "quantity_selector",
           "disabled": true,
           "settings": {}
         },
-        "icon_with_text_AWdPmL": {
-          "type": "icon-with-text",
-          "disabled": true,
-          "settings": {
-            "layout": "horizontal",
-            "icon_1": "none",
-            "heading_1": "",
-            "icon_2": "none",
-            "heading_2": "",
-            "icon_3": "truck",
-            "heading_3": "Free shipping when you buy 2+ perfumes"
-          }
-        },
         "buy_buttons": {
           "type": "buy_buttons",
+          "disabled": true,
           "settings": {
             "show_dynamic_checkout": false,
             "show_gift_card_recipient": true
-          }
-        },
-        "custom_liquid_6bbcMk": {
-          "type": "custom_liquid",
-          "disabled": true,
-          "settings": {
-            "custom_liquid": "<style>\n  .fs-banner {\n    display:flex; align-items:center; justify-content:center; gap:10px;\n    padding:12px 16px; border-top:1px solid #eee; border-bottom:1px solid #eee;\n    background:#fff; color:#111; font-family:inherit;\n  }\n  .fs-banner .fs-icon{display:inline-flex;line-height:0}\n  .fs-banner .fs-text{font-size:16px;font-weight:500;letter-spacing:.2px}\n  .fs-banner .fs-amount{font-weight:600;margin-left:4px}\n  @media (max-width:480px){ .fs-banner .fs-text{font-size:14px;text-align:center} }\n</style>\n\n<div class=\"fs-banner\" role=\"status\" aria-live=\"polite\" data-base-cad=\"65\">\n  <span class=\"fs-icon\" aria-hidden=\"true\">\n    <!-- Truck icon -->\n    <svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\"\n         stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\">\n      <rect x=\"1\" y=\"3\" width=\"15\" height=\"13\" rx=\"2\" ry=\"2\"></rect>\n      <path d=\"M16 8h5l2 3v5h-7z\"></path>\n      <circle cx=\"5.5\" cy=\"19.5\" r=\"2\"></circle>\n      <circle cx=\"18.5\" cy=\"19.5\" r=\"2\"></circle>\n    </svg>\n  </span>\n  <span class=\"fs-text\">\n    Free shipping for orders over <span class=\"fs-amount\" id=\"fsAmount\">CA$ 65.00</span>\n  </span>\n</div>\n\n<script>\n(function(){\n  const el = document.getElementById('fsAmount');\n  if(!el) return;\n\n  const BASE_CAD = parseFloat(document.querySelector('.fs-banner')?.dataset.baseCad || '65');\n\n  // Fetch Shopify localization (currency of visitor)\n  async function getCurrencyCode(){\n    try {\n      const res = await fetch('/localization.json', {credentials:'same-origin'});\n      const data = await res.json();\n      // Try modern fields first, then fallbacks\n      return (data?.currency?.iso_code) ||\n             (data?.country?.currency?.iso_code) ||\n             (data?.country?.currency) || 'CAD';\n    } catch(e){ return 'CAD'; }\n  }\n\n  // Format with Intl in the visitor's currency\n  function formatMoney(amount, currency){\n    try {\n      return new Intl.NumberFormat('en', {\n        style: 'currency', currency, currencyDisplay: 'symbol', maximumFractionDigits: 2\n      }).format(amount);\n    } catch(e){\n      // Fallback plain\n      return `${amount.toFixed(2)} ${currency}`;\n    }\n  }\n\n  async function updateBanner(){\n    const targetCurrency = await getCurrencyCode();\n    if (targetCurrency === 'CAD') {\n      el.textContent = formatMoney(BASE_CAD, 'CAD');\n      return;\n    }\n    try {\n      // Free, no-key, CORS-enabled rates\n      const url = `https://api.exchangerate.host/latest?base=CAD&symbols=${encodeURIComponent(targetCurrency)}`;\n      const res = await fetch(url);\n      const data = await res.json();\n      const rate = data?.rates?.[targetCurrency];\n      if (rate) {\n        const converted = BASE_CAD * rate;\n        el.textContent = formatMoney(converted, targetCurrency);\n      } else {\n        el.textContent = formatMoney(BASE_CAD, 'CAD'); // fallback\n      }\n    } catch (e) {\n      el.textContent = formatMoney(BASE_CAD, 'CAD');   // fallback\n    }\n  }\n\n  // Run now\n  updateBanner();\n\n  // Re-run when user changes country/currency selectors (common Shopify forms)\n  const relisten = () => {\n    document.querySelectorAll('form[action=\"/localization\"] select').forEach(sel=>{\n      sel.addEventListener('change', () => setTimeout(updateBanner, 800));\n    });\n  };\n  document.addEventListener('shopify:section:load', relisten);\n  document.addEventListener('DOMContentLoaded', relisten);\n\n  // Observe DOM changes (in case header swaps on Markets change)\n  const obs = new MutationObserver(() => setTimeout(updateBanner, 500));\n  obs.observe(document.documentElement, {subtree:true, childList:true});\n})();\n</script>"
           }
         },
         "reactive_variant_selector_JyFrkg": {
@@ -114,7 +98,6 @@
         },
         "custom_liquid_G7fm64": {
           "type": "custom_liquid",
-          "disabled": true,
           "settings": {
             "custom_liquid": "{% render 'atc-bundle-builder' %}"
           }
@@ -136,7 +119,7 @@
             "heading_1": "Lasts 12+ Hours",
             "icon_2": "heart",
             "image_2": "shopify://shop_images/heart.svg",
-            "heading_2": "loved by customers",
+            "heading_2": "loved by 10,000+",
             "icon_3": "truck",
             "image_3": "shopify://shop_images/sheild-star.svg",
             "heading_3": "60 day satisfaction guarantee"
@@ -158,10 +141,6 @@
         "cta_review_g7n3R8": {
           "type": "cta_review",
           "disabled": true,
-          "settings": {}
-        },
-        "judge_me_reviews_review_snippet_widget_wL7dcE": {
-          "type": "shopify://apps/judge-me-reviews/blocks/review_snippet_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
           "settings": {}
         },
         "collapsible_tab_XYmgtQ": {
@@ -200,6 +179,16 @@
             "page": ""
           }
         },
+        "collapsible_tab_gkD4Ei": {
+          "type": "collapsible_tab",
+          "disabled": true,
+          "settings": {
+            "heading": "Is the inspired fragrance different?",
+            "icon": "perfume",
+            "content": "<p>No — our inspired fragrances are designed as an <strong>exact copy</strong> of the originals from famous luxury brands. We carefully recreate the same fragrance structure, using identical scent notes and raw materials wherever possible.</p><p>✔️ <strong>1:1 fragrance impression</strong> – The scent is virtually indistinguishable from the original, even for experienced perfume lovers.<br/><br/>✔️ <strong>Same longevity and projection</strong> – Thanks to the high concentration of perfume oils (19-21%), our fragrances last just as long as the originals.<br/><br/>✔️ <strong>Affordable price, no compromise</strong> – You get the exact same olfactory experience without paying for the logo, marketing, or designer packaging.</p><p>In short: Our perfumes are identical to luxury brands in scent, quality, and durability — the only difference is the price.</p>",
+            "page": ""
+          }
+        },
         "collapsible_tab_pdYPYn": {
           "type": "collapsible_tab",
           "settings": {
@@ -218,25 +207,6 @@
             "page": ""
           }
         },
-        "collapsible_tab_gkD4Ei": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "COMPARATIVE ADVERTISING DISCLAIMER",
-            "icon": "star",
-            "content": "<p>Please be aware that products mentioned throughout our site are a mere guide and in no circumstance should be mistaken for the actual high street, designer or Niche brand. Names and copyrights, used or unused, are properties of their respective manufacturers and/or designers. <br/><br/>These are simply inspirations, and are not ‘identical’ to any other fragrance or original.<br/><br/>Tryscent perfumes are not to be confused with originals and we have no affiliation with the manufacturers of these unnamed designer brands. <br/><br/>All ‘Trademarks’, used or unused, are property of their respective owners. We are not endorsed by, directly affiliated with, maintained, authorised, or sponsored by any trademark holder referenced or unreferenced herein. <br/><br/>The use of any product name is for identification and reference purposes only, and does not imply any association with the trademark holder.</p>",
-            "page": ""
-          }
-        },
-        "collapsible_tab_HEexgh": {
-          "type": "collapsible_tab",
-          "disabled": true,
-          "settings": {
-            "heading": "Is the inspired fragrance different?",
-            "icon": "perfume",
-            "content": "<p>No — our inspired fragrances are designed as an <strong>exact copy</strong> of the originals from famous luxury brands. We carefully recreate the same fragrance structure, using identical scent notes and raw materials wherever possible.</p><p>✔️ <strong>1:1 fragrance impression</strong> – The scent is virtually indistinguishable from the original, even for experienced perfume lovers.<br/><br/>✔️ <strong>Same longevity and projection</strong> – Thanks to the high concentration of perfume oils (19-21%), our fragrances last just as long as the originals.<br/><br/>✔️ <strong>Affordable price, no compromise</strong> – You get the exact same olfactory experience without paying for the logo, marketing, or designer packaging.</p><p>In short: Our perfumes are identical to luxury brands in scent, quality, and durability — the only difference is the price.</p>",
-            "page": ""
-          }
-        },
         "share": {
           "type": "share",
           "disabled": true,
@@ -247,20 +217,13 @@
       },
       "block_order": [
         "title",
-        "cheaper_than_yDGYG9",
-        "judge_me_reviews_preview_badge_cP6icA",
-        "inspiration_eie3ih",
         "selling_points_9tdid6",
-        "fd_product_groups_product_group_CWqTBn",
-        "price",
-        "kaching_bundles_app_block_ay3jxB",
+        "cheaper_than_yDGYG9",
         "mobile_gallery_FUEn6Y",
-        "kaching_bundles_app_block_LNLTxR",
         "variant_picker",
+        "price",
         "quantity_selector",
-        "icon_with_text_AWdPmL",
         "buy_buttons",
-        "custom_liquid_6bbcMk",
         "reactive_variant_selector_JyFrkg",
         "shipping_text_HCVN8A",
         "custom_liquid_G7fm64",
@@ -269,15 +232,13 @@
         "money_back_eKXfnE",
         "people_purchased_cYxaYJ",
         "cta_review_g7n3R8",
-        "judge_me_reviews_review_snippet_widget_wL7dcE",
         "collapsible_tab_XYmgtQ",
         "collapsible_tab_tUEYBx",
         "collapsible_tab_nhKiAc",
         "collapsible_tab_pCrhqV",
+        "collapsible_tab_gkD4Ei",
         "collapsible_tab_pdYPYn",
         "collapsible_tab_F64PJg",
-        "collapsible_tab_gkD4Ei",
-        "collapsible_tab_HEexgh",
         "share"
       ],
       "custom_css": [],
@@ -792,47 +753,6 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
-    },
-    "1762328423bd4ecfaa": {
-      "type": "apps",
-      "blocks": {
-        "judge_me_reviews_review_widget_AgrTYp": {
-          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {
-            "review_data": "sample_data",
-            "max_width": 1200,
-            "show_shop_reviews": false,
-            "empty_state": "empty_widget"
-          }
-        }
-      },
-      "block_order": [
-        "judge_me_reviews_review_widget_AgrTYp"
-      ],
-      "disabled": true,
-      "settings": {
-        "include_margins": true
-      }
-    },
-    "1762328787ef1c6bc7": {
-      "type": "apps",
-      "blocks": {
-        "judge_me_reviews_review_widget_rVpi3e": {
-          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {
-            "review_data": "sample_data",
-            "max_width": 1200,
-            "show_shop_reviews": false,
-            "empty_state": "empty_widget"
-          }
-        }
-      },
-      "block_order": [
-        "judge_me_reviews_review_widget_rVpi3e"
-      ],
-      "settings": {
-        "include_margins": true
-      }
     }
   },
   "order": [
@@ -854,8 +774,6 @@
     "faq-section",
     "tryscent_guarantee_8hATfM",
     "floating-atc",
-    "image_with_text_hmaWn4",
-    "1762328423bd4ecfaa",
-    "1762328787ef1c6bc7"
+    "image_with_text_hmaWn4"
   ]
 }
