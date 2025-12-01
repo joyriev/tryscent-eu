@@ -150,15 +150,6 @@
             "page": ""
           }
         },
-        "collapsible_tab_gkD4Ei": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Disclaimer",
-            "icon": "perfume",
-            "content": "<p>We are not affiliated, associated, endorsed by, or in any way connected to any designer, luxury, or trademarked perfume brands. All trademarks, brand names, and product names referenced on this website belong to their respective owners.</p><p>Any mention of other fragrances is made strictly for comparison and descriptive purposes only, to help customers understand the scent profile they may experience. These comparisons do not imply any relationship, approval, or sponsorship from the referenced brands.</p><p>All TryScent fragrances are original compositions created for the TryScent brand. Our products are not exact copies, replicas, or counterfeits. They are unique “inspired-scent interpretations” designed to capture a similar vibe or olfactory experience while reflecting our own creative direction.</p><p>By shopping on shop.tryscent.co, you acknowledge that TryScent operates solely under its own brand, providing high-quality fragrances at accessible prices without claiming any formal partnership with designer brands.</p>",
-            "page": ""
-          }
-        },
         "collapsible_tab_pdYPYn": {
           "type": "collapsible_tab",
           "settings": {
@@ -174,6 +165,15 @@
             "heading": "Compositions of Perfumes",
             "icon": "perfume",
             "content": "<p>Alcohol Denat. Parfum (Fragrance) Aqua (Water) Limonene Linalool Citronellol Geraniol Citral Benzyl Salicylate Coumarin Alpha-Isomethyl Ionone Hexyl Cinnamal Benzyl Benzoate</p>",
+            "page": ""
+          }
+        },
+        "collapsible_tab_gkD4Ei": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Disclaimer",
+            "icon": "perfume",
+            "content": "<p>We are not affiliated, associated, endorsed by, or in any way connected to any designer, luxury, or trademarked perfume brands. All trademarks, brand names, and product names referenced on this website belong to their respective owners.</p><p>Any mention of other fragrances is made strictly for comparison and descriptive purposes only, to help customers understand the scent profile they may experience. These comparisons do not imply any relationship, approval, or sponsorship from the referenced brands.</p><p>All TryScent fragrances are original compositions created for the TryScent brand. Our products are not exact copies, replicas, or counterfeits. They are unique “inspired-scent interpretations” designed to capture a similar vibe or olfactory experience while reflecting our own creative direction.</p><p>By shopping on shop.tryscent.co, you acknowledge that TryScent operates solely under its own brand, providing high-quality fragrances at accessible prices without claiming any formal partnership with designer brands.</p>",
             "page": ""
           }
         },
@@ -206,9 +206,9 @@
         "collapsible_tab_tUEYBx",
         "collapsible_tab_nhKiAc",
         "collapsible_tab_pCrhqV",
-        "collapsible_tab_gkD4Ei",
         "collapsible_tab_pdYPYn",
         "collapsible_tab_F64PJg",
+        "collapsible_tab_gkD4Ei",
         "share"
       ],
       "custom_css": [],
