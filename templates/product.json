@@ -29,6 +29,7 @@
         },
         "inspiration_eie3ih": {
           "type": "inspiration",
+          "disabled": true,
           "settings": {}
         },
         "selling_points_9tdid6": {
