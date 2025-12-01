@@ -18,7 +18,6 @@
         },
         "selling_points_9tdid6": {
           "type": "selling_points",
-          "disabled": true,
           "settings": {}
         },
         "cheaper_than_yDGYG9": {
@@ -26,34 +25,6 @@
           "disabled": true,
           "settings": {
             "number": 0
-          }
-        },
-        "judge_me_reviews_preview_badge_cP6icA": {
-          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-          "settings": {}
-        },
-        "inspiration_eie3ih": {
-          "type": "inspiration",
-          "disabled": true,
-          "settings": {}
-        },
-        "selling_points_9tdid6": {
-          "type": "selling_points",
-          "settings": {}
-        },
-        "fd_product_groups_product_group_CWqTBn": {
-          "type": "shopify://apps/fd-product-groups/blocks/product-group/c4faf6e2-c14b-4cc5-ad31-cf86b1c483fb",
-          "settings": {}
-        },
-        "price": {
-          "type": "price",
-          "settings": {}
-        },
-        "kaching_bundles_app_block_ay3jxB": {
-          "type": "shopify://apps/kaching-bundles/blocks/app-block/6c637362-a106-4a32-94ac-94dcfd68cdb8",
-          "disabled": true,
-          "settings": {
-            "product": "{{product}}"
           }
         },
         "mobile_gallery_FUEn6Y": {
@@ -181,11 +152,10 @@
         },
         "collapsible_tab_gkD4Ei": {
           "type": "collapsible_tab",
-          "disabled": true,
           "settings": {
-            "heading": "Is the inspired fragrance different?",
+            "heading": "Disclaimer",
             "icon": "perfume",
-            "content": "<p>No — our inspired fragrances are designed as an <strong>exact copy</strong> of the originals from famous luxury brands. We carefully recreate the same fragrance structure, using identical scent notes and raw materials wherever possible.</p><p>✔️ <strong>1:1 fragrance impression</strong> – The scent is virtually indistinguishable from the original, even for experienced perfume lovers.<br/><br/>✔️ <strong>Same longevity and projection</strong> – Thanks to the high concentration of perfume oils (19-21%), our fragrances last just as long as the originals.<br/><br/>✔️ <strong>Affordable price, no compromise</strong> – You get the exact same olfactory experience without paying for the logo, marketing, or designer packaging.</p><p>In short: Our perfumes are identical to luxury brands in scent, quality, and durability — the only difference is the price.</p>",
+            "content": "<p>We are not affiliated, associated, endorsed by, or in any way connected to any designer, luxury, or trademarked perfume brands. All trademarks, brand names, and product names referenced on this website belong to their respective owners.</p><p>Any mention of other fragrances is made strictly for comparison and descriptive purposes only, to help customers understand the scent profile they may experience. These comparisons do not imply any relationship, approval, or sponsorship from the referenced brands.</p><p>All TryScent fragrances are original compositions created for the TryScent brand. Our products are not exact copies, replicas, or counterfeits. They are unique “inspired-scent interpretations” designed to capture a similar vibe or olfactory experience while reflecting our own creative direction.</p><p>By shopping on shop.tryscent.co, you acknowledge that TryScent operates solely under its own brand, providing high-quality fragrances at accessible prices without claiming any formal partnership with designer brands.</p>",
             "page": ""
           }
         },
