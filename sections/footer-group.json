@@ -24,6 +24,13 @@
     "footer": {
       "type": "footer",
       "blocks": {
+        "text_NzUgKa": {
+          "type": "text",
+          "settings": {
+            "heading": "Disclaimer",
+            "subtext": "<p>TryScent is an independent brand and is not affiliated or endorsed by any designer or trademarked fragrance brands. Any referenced names are for comparison only and belong to their respective owners.<br/><br/></p>"
+          }
+        },
         "image_aEwGgP": {
           "type": "image",
           "disabled": true,
@@ -55,6 +62,7 @@
         }
       },
       "block_order": [
+        "text_NzUgKa",
         "image_aEwGgP",
         "link_list_VCpt9M",
         "link_list_nemT7J",
