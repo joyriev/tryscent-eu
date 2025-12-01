@@ -173,10 +173,11 @@ data-la-dn-product-tags="{{ card_product.tags | join: ',' | escape | default: '[
         <div class="card__information">
           <div class="flex items-center gap-2 mb-3">
             <img class="object-contain object-center" src="{{ card_product.metafields.custom.inspiration.value.image |  image_url }}" alt="{{ card_product.metafields.custom.inspiration.value.image.alt | escape }}" width="35" height="35">
+            {% comment %}
             <div>
               <h4 class="text-sm font-semibold my-0 line-clamp-1">{{ card_product.metafields.custom.inspiration.value.name }}</h4>
               <p class="text-xs my-0">Inspiration</p>
-            </div>
+            </div> {% endcomment %}
           </div>
           <div class="flex items-center flex-wrap gap-x-2 gap-y-1">
             {%- if show_rating and card_product.metafields.reviews.rating.value != blank -%}
