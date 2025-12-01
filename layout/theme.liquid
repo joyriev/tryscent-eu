@@ -2,33 +2,6 @@
 <html class="js" lang="{{ request.locale.iso_code }}">
   <head>
     <script>
-document.addEventListener("DOMContentLoaded", function () {
-  var announcementBar = document.querySelector("sticky-header");
-  var targetOffset = announcementBar ? announcementBar.offsetTop : 0;
-
-  function toggleBodyClass() {
-    var scrollPosition = window.scrollY || document.documentElement.scrollTop;
-    if (scrollPosition > targetOffset) {
-      document.body.classList.add("scrolled");
-    } else {
-      document.body.classList.remove("scrolled");
-    }
-  }
-
-  toggleBodyClass();
-
-  window.addEventListener("scroll", function () {
-    var stickyBar = document.querySelector("#limoniapps-discountninja-stickybar-wrapper");
-    if (stickyBar) {
-      var elementHeight = stickyBar.offsetHeight;
-      document.documentElement.style.setProperty("--limo-height", elementHeight + "px");
-    }
-    toggleBodyClass();
-  });
-});
-
-</script>
-    <script>
       /* >> Heatmap.com :: Snippet << */(function (h,e,a,t,m,ap) { (h._heatmap_paq = []).push([ 'setTrackerUrl', (h.heatUrl = e) + a]); h.hErrorLogs=h.hErrorLogs || []; ap=t.createElement('script');  ap.src=h.heatUrl+'preprocessor.min.js?sid='+m;  ap.defer=true; t.head.appendChild(ap); ['error', 'unhandledrejection'].forEach(function (ty) {     h.addEventListener(ty, function (et) { h.hErrorLogs.push({ type: ty, event: et }); }); });})(window,'https://dashboard.heatmap.com/','heatmap.php',document,3912);
     </script>
     {% render 'pandectes-rules' %}
@@ -392,23 +365,7 @@ body {
         document.documentElement.classList.add('shopify-design-mode');
       }
     </script>
-    <!-- Meta Pixel Code -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '726247313415713');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=726247313415713&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Meta Pixel Code -->
+    
   </head>
 
   <body class="{% if settings.animations_hover_elements != 'none' %} animate--hover-{{ settings.animations_hover_elements }}{% endif %}">
