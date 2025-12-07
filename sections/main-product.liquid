@@ -384,6 +384,7 @@
                     </div>
                   </details>
                 </div>
+              {%- when 'atc_bundle_builder' -%}
               {%- when 'quantity_selector' -%}
                 <div
                   id="Quantity-Form-{{ section.id }}"
@@ -882,7 +883,11 @@
   </div>
 </product-info>
 
-{% render 'atc-builder-products-modal' %}
+{% for block in section.blocks %}
+  {% if block.type == 'atc_bundle_bulder'%}
+    {% render 'atc-builder-products-modal' %}
+  {% endif %}
+{% endfor %}
   
 <script>
   document.addEventListener("DOMContentLoaded", function () {
