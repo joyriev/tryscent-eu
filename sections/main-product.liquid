@@ -885,11 +885,11 @@
 </product-info>
 
 {% for block in section.blocks %}
-  {% if block.type == 'atc_bundle_bulder'%}
+  {% if block.type == 'atc_bundle_bulder' %}
     {% render 'atc-builder-products-modal' %}
   {% endif %}
 {% endfor %}
-  
+
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     // update shipping country text
