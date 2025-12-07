@@ -12,6 +12,13 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "text_jzcKBk": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "text_style": "body"
+          }
+        },
         "title": {
           "type": "title",
           "settings": {}
@@ -29,6 +36,7 @@
         },
         "mobile_gallery_FUEn6Y": {
           "type": "mobile_gallery",
+          "disabled": true,
           "settings": {}
         },
         "variant_picker": {
@@ -69,6 +77,7 @@
         },
         "custom_liquid_G7fm64": {
           "type": "custom_liquid",
+          "disabled": true,
           "settings": {
             "custom_liquid": "{% render 'atc-bundle-builder' %}"
           }
@@ -186,6 +195,7 @@
         }
       },
       "block_order": [
+        "text_jzcKBk",
         "title",
         "selling_points_9tdid6",
         "cheaper_than_yDGYG9",
