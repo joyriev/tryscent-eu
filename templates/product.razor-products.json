@@ -299,15 +299,6 @@
         "background_color": "#ffffff"
       }
     },
-    "scent_breakdown_rG4H3T": {
-      "type": "scent-breakdown",
-      "name": "Scent Breakdown",
-      "settings": {
-        "background_color": "#faf9f6",
-        "padding_top": 72,
-        "padding_bottom": 40
-      }
-    },
     "stacks_up_xtpACd": {
       "type": "stacks-up",
       "blocks": {
@@ -740,7 +731,6 @@
     "pdp_bundle_builder",
     "marquee_labels_dpeY47",
     "cupid_video_reviews_RyEMKn",
-    "scent_breakdown_rG4H3T",
     "stacks_up_xtpACd",
     "special_offer_bogo_CFP4NP",
     "related-products",
